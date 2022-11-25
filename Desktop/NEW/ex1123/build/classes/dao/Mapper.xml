@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.Mapper">
+
+	<select id="List" resultType="dao.VO">
+		select * from practice
+	</select>
+	
+	<select id = "Login" parameterType="dao.VO" resultType="dao.VO">
+		select * from practice where id=#{id} and pw = #{pw}
+	</select>
+	
+	
+	<insert id= "signupMethod" parameterType = "dao.userVO">
+		insert into jointable values(#{id},#{pw},#{name},#{gender},#{email})
+	</insert>
+	
+</mapper>
